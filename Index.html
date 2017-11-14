@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ <link href="feed.css" rel="stylesheet">
+  <title>Cision Sverige</title>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="myController">
+
+<div class="container" >
+    <div class="col-sm-12">
+    <p class="title">Cision Sverige</p>
+    </div>
+<div ng-controller="myController">
+  <div class="row">
+    <div class="col-sm-4">
+      <label for="Search:">Search</label>
+        <input type="text" id="search" placeholder="Search" ng-model="search">
+    </div>
+    <div class="col-sm-4">
+        <label for="search">Sort by:</label>
+        <button ng-click="SortBy('UpdatedDate')" class="btn btn-primary">UpdatedDate</button>
+        <button ng-click="SortBy('Title')" class="btn btn-primary"> Title</button>
+    </div>
+  </div>
+
+ <div class="row" >
+     <div ng-repeat="fee in feed | filter:search | orderBy:MyOrder:reverse">
+       
+      <div class="media" >
+         <div class="media-left media-middle">
+             <a href={{fee.Link}}>
+             <img class="media-object img-thumbnail"
+               src={{fee.Thumbnail}} alt={{fee.Title}}>
+             </a>
+          </div>
+         <div class="media-body">
+             <h2 class="media-heading"> {{fee.Title}} </h2>
+             <span class="badge">{{fee.UpdatedDate | date:'mediumDate'}}</span>
+             <p>{{fee.Description}}</p>
+             <p><a  href={{fee.Link}} > Watch More &raquo;</a></p>
+        </div>
+
+      </div>
+     </div>
+     <div>  <p class="separaterbmedia"></p>
+     </div>
+
+     </div>
+    </div>
+  </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <script src="feed.js"></script>
+
+</body>
+</html>

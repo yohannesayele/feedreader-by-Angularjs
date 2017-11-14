@@ -1,0 +1,38 @@
+.body{
+    height:100%; 
+    background-color:aqua 
+}
+.html{
+    position: relative;
+    min-height: 100%;
+}
+.container {
+    padding:20px 30px 50px 30px;
+    margin:0px auto;
+    background: #D3D3D3 ;
+    color:currentColor;
+}
+.title{
+    font-family:cursive;
+    font-style:italic;
+    font-size:24px;
+    font-weight: bold;
+    text-align:center;
+     padding-bottom:10px
+    
+}
+.p{
+    font-family:serif 
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.separaterbmedia{
+   padding:10px ;
+}
