@@ -1,13 +1,11 @@
     var myApp = angular.module('myApp', []);
      myApp.controller('myController', function ($scope, $http) {
-        
-        var feed = [];
+         var feed = [];
         $http.get("feed.xml").success(function (xml) {
              $(xml).find("entry").each(function () {
                  var link = $(this).find('link').attr('href');
                  var media = $(this).find('media\\:group');
-                 var updatedDate=$(this).find('updated').text();
-                 
+                 var updatedDate=$(this).find('updated').text();                 
                  var title=media.find('media\\:title').text();
                  var content=media.find('media\\:content').attr("url");
                  var url=media.find('media\\:thumbnail').attr("url");
